@@ -18,8 +18,8 @@ router.post("/create",async function(req,res){
 })
 }
 
-router.get("/", function (req, res) {
-    res.send("hey it's owner");
+router.get("/admin", function (req, res) {
+    res.render("createproducts")
 });
 
 
