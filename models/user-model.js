@@ -6,17 +6,28 @@ const userSchema = mongoose.Schema({
         minLength: 3,
         trim: true,
     },
-    email: String,
+    email: {
+        type: String,
+        unique: true
+    },
     password: String,
+
+    role: {
+        type: String,
+        enum: ["user", "owner"],
+        default: "user"
+    },
+
     cart: [{
         type: mongoose.Schema.Types.ObjectId,
         ref:"product"
     }],
-    
+
     orders: {
         type: Array,
         default: [],
     },
+
     contact: Number,
     picture: String,
 });

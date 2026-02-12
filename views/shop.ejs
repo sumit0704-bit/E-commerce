@@ -1,4 +1,13 @@
 <%- include('./partials/header') %>
+<% if(user.role === "owner"){ %>
+    <div class="mb-5 px-4">
+<a href="/products/admin" 
+   class="px-4 py-2 bg-black text-white rounded">
+   Create Product
+</a>
+
+    </div>
+<% } %>
     <% if(success.length>0){ %>
         <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-blue-500">
             <span class="inline-block mt-1 mb-1 text-white">

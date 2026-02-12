@@ -12,7 +12,12 @@ router.get("/", function (req, res) {
 router.get("/shop", isLoggedin, async function (req, res) {
     let products = await productModel.find();
     let success = req.flash("success");
-    res.render("shop", { products, success });
+
+    res.render("shop", { 
+        products,
+        success,
+        user: req.user   // VERY IMPORTANT
+    });
 });
 
 router.get("/cart", isLoggedin, async function (req, res) {
